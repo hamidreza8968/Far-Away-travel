@@ -13,11 +13,15 @@ function App() {
         setItems((items) => [...items , item]);
     }
 
+    function handleDeleteItems(id) {
+        setItems((items) => items.filter(item => item.id!==id))
+    }
+
     return (
         <div className="app">
             <Logo/>
             <Form onAddItems={handleAddItems}/>
-            <PackingList items={items}/>
+            <PackingList items={items} onDeleteItems={handleDeleteItems}/>
             <Stats/>
         </div>
     )
@@ -59,8 +63,8 @@ function Form({onAddItems}) {
     );
 }
 
-function PackingList({items}) {
-    const renderedItems = items.map((item) => <Item itemObj={item} key={item.id}/>);
+function PackingList({items , onDeleteItems}) {
+    const renderedItems = items.map((item) => <Item item={item} onDeleteItems={onDeleteItems} key={item.id}/>);
     return (
         <div className="list">
             <ul>{renderedItems}</ul>
@@ -69,15 +73,14 @@ function PackingList({items}) {
     )
 }
 
-function Item({itemObj}) {
+function Item({item , onDeleteItems}) {
     return (
         <li>
-            <span style={itemObj.packed ? {textDecoration:"line-through"} : {}}>
-                {itemObj.quantity} {itemObj.description}
+            <span style={item.packed ? {textDecoration:"line-through"} : {}}>
+                {item.quantity} {item.description}
             </span>
-            <button>❌</button>
+            <button onClick={()=>onDeleteItems(item.id)}>❌</button>
         </li>
-
     )
 }
 
