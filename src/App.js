@@ -21,7 +21,7 @@ function App() {
             <Logo/>
             <Form onAddItems={handleAddItems}/>
             <PackingList items={items} onDeleteItems={handleDeleteItems} onToggleItems={handleToggleItems}/>
-            <Stats/>
+            <Stats items={items}/>
         </div>
     )
 }
@@ -86,10 +86,12 @@ function Item({item , onDeleteItems , onToggleItems}) {
     )
 }
 
-function Stats() {
+function Stats({items}) {
+    const numItems = items.length;
+    const numPackedItems = (items.filter(item => item.packed===true)).length;
     return (
         <footer className="stats">
-            <em>💼 You have X items on your list, and you already packed X (X%)</em>
+            <em>💼 You have {numItems} items on your list, and you already packed {numPackedItems} ({(numPackedItems/numItems)*100}%)</em>
         </footer>
     );
 }
