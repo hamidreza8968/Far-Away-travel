@@ -1,0 +1,51 @@
+@media (max-width: 960px) {
+    h1{
+        font-size: 6rem;
+    }
+    .add-form {
+        display: grid;
+        row-gap: 1.4rem;
+        padding: 1.4rem 0;
+    }
+    .add-form h3{
+        grid-column: 1/4;
+        grid-row: 1;
+    }
+}
+
+
+@media (max-width: 580px) {
+    h1{
+        font-size: 3.6rem;
+    }
+    .stats{
+        font-size: 1.6rem;
+    }
+
+    .add-form {
+        display: grid;
+    }
+    .add-form h3{
+        grid-column: 1;
+        font-size: 1.8rem;
+
+    }
+    .add-form select , .add-form input , .add-form button{
+        width: 75%;
+        font-size: 1.4rem;
+        justify-self: center;
+    }
+    .add-form button{
+        width: 50%;
+    }
+    .actions{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+    }
+    .actions button{
+        width: 75%;
+    }
+
+}
