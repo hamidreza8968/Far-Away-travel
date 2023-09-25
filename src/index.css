@@ -29,7 +29,7 @@ h1 {
   text-align: center;
   background-color: #f4a226;
   font-family: "Monoton";
-  font-size: 8rem;
+  font-size: 6.4rem;
   text-transform: uppercase;
   font-weight: 400;
   word-spacing: 30px;
@@ -63,6 +63,13 @@ input {
   font-weight: 700;
   font-size: 1.8rem;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 12px;
+
 }
 
 .add-form button {
@@ -89,24 +96,18 @@ input {
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0 0.8rem;
+
+  background-position-y: 6px;
 }
 
 .list ul {
   list-style: none;
   width: 80%;
-  overflow: scroll;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.2rem;
   justify-content: center;
   align-content: start;
-}
-
-.list li {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
 }
 
 input[type="checkbox"] {
@@ -129,4 +130,54 @@ input[type="checkbox"] {
   text-align: center;
   font-weight: 700;
   padding: 3.2rem 0;
+}
+
+
+
+.item{
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid;
+  position: relative;
+  text-align: center;
+  background-color: #FFFF66	;
+  cursor: pointer;
+}
+.packed{
+  background-color: #32CD32	;
+}
+.itemClose{
+  position: absolute;
+  top: -21px;
+  right: -11px;
+}
+.itemText{
+  color: #5a3e2b;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  line-height: 22px;
+}
+.text-packed{
+font-size: 14px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  font-weight: 800;
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
 }
